@@ -8,16 +8,14 @@
         Name="CookingApplication"
         Title="MainWindow" Height="450" Width="800">
 
-   
-    <Grid>
-        
-        
+
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="409*"/>
         </Grid.RowDefinitions>
 
-        <Grid Margin="-1,0,1,0">
+        <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="646*"/>
@@ -26,7 +24,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="C:\Users\BBV_19\source\repos\examNew\examNew\resources\AppLogo.png"
+            <Image Source="{Binding ElementName=CookingApplication, Path=ImageLogoPath}"
                   Stretch="Fill" />
 
             <Button Content="___" Grid.Column="2"  Style="{StaticResource buttonMain}"
@@ -39,28 +37,10 @@
             <Button Content="X" Grid.Column="4" 
                       Name="ButtonClose" Click="ButtonClose_Click" 
                     Style="{StaticResource buttonMain}"/>
-        </Grid>
+        </Grid> <!-- top of window-->
 
-        <Grid Grid.Row="1">
-            <!-- CONTENT-->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="47*"/>
-                <RowDefinition Height="291*"/>
-                <RowDefinition Height="62*"/>
-            </Grid.RowDefinitions>
-            <Border Background="#999999" Grid.RowSpan="3"/>
 
-            <TextBlock Text="Cooking" HorizontalAlignment="Center"
-                       FontSize="18" Margin="0,10,0,10" />
+        <Frame Grid.Row="1" Source="StartPage.xaml"/>
 
-            <WrapPanel>
-                <Label Margin="0" FontSize="14">
-               
-                  
-                </Label>
-            </WrapPanel>
-        </Grid>
-            
-        <!-- CONTENT END-->
     </Grid>
 </Window>

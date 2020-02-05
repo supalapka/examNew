@@ -1,0 +1,55 @@
+﻿<Page x:Class="examNew.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:examNew"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StartPage">
+
+    <Grid>
+        <Grid Grid.Row="1">
+            <!-- CONTENT-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="297*"/>
+                <RowDefinition Height="63*"/>
+            </Grid.RowDefinitions>
+            <Border Background="#999999" Grid.RowSpan="3"/>
+
+            <TextBlock Text="Cooking" HorizontalAlignment="Center"
+                       FontSize="18" Margin="0,10,0,10" Width="66" />
+
+            <Label Content="Ознайомлення" Grid.Row="1"  FontSize="16"/>
+
+            <TextBlock FontSize="14" Grid.Row="1" Margin="20" >
+                    <LineBreak/>
+                      text text text text text text text text text text text text text
+                    <LineBreak/>
+                      text text text text text
+                    <LineBreak/>
+                 text text text text text text text text text text text
+                 <LineBreak/>
+                  text text text text text text text text text text text  text text text text text text text text text text text
+                 <LineBreak/>
+                      text text text text text text text text text text text text text
+                    <LineBreak/>
+                      text text text text text  text text
+                    <LineBreak/>
+                 text text text text text text text text text text text
+                 <LineBreak/>
+                      text text text text text text text text text text text text text
+                    <LineBreak/>
+                      text text text text text
+                    <LineBreak/>
+                 text text text text text text text text text text text
+                 <LineBreak/>
+                 text text
+                 <LineBreak/>
+            </TextBlock>
+
+        </Grid>
+        <!-- CONTENT END-->
+    </Grid>
+</Page>

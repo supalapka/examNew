@@ -15,14 +15,15 @@ using System.Windows.Shapes;
 
 namespace examNew
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
+        public string ImageLogoPath = $"{Environment.CurrentDirectory}\\resources\\AppLogo.png";
+
         public MainWindow()
         {
             InitializeComponent();
+            ImageLogoPath += "1";
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
