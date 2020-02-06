@@ -19,25 +19,29 @@ namespace examNew
     /// <summary>
     /// Interaction logic for AllRecipes.xaml
     /// </summary>
-    public partial class AllRecipes : Page, INotifyPropertyChanged
+    public partial class AllRecipes : Page
     {
          
-        public static readonly DependencyProperty DishesListProperty = DependencyProperty.Register("DishesList", typeof(List<Dishes>),
-            typeof(AllRecipes), new PropertyMetadata()) ;
-        public List<Dishes> DishesList
-        {
-            get { return (List<Dishes>)this.GetValue(DishesListProperty); }
-            set { this.SetValue(DishesListProperty, value); }
-        }    
+        //public static readonly DependencyProperty DishesListProperty = DependencyProperty.Register("DishesList", typeof(List<Dishes>),
+        //    typeof(AllRecipes), new PropertyMetadata()) ;
+       static public List<Dishes> DishesList { get; set; }
+        //{
+        //    get { return (List<Dishes>)this.GetValue(DishesListProperty); }
+        //    set { this.SetValue(DishesListProperty, value); }
+        //}    
 
         public AllRecipes()
         {
             InitializeComponent();
-            DishesList = new List<Dishes>();
-            InitializeDishList();
+            if (DishesList == null)
+            {
+                DishesList = new List<Dishes>();
+                InitializeDishList();
+            }
+            DataContext = this;
+
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         void InitializeDishList()
         {
@@ -76,7 +80,8 @@ namespace examNew
             DishesList.Add(dish3);
             DishesList.Add(dish2);
             DishesList.Add(dish4);
-            DataContext = this;
+
+            DishesList = DishSortByOrder(DishesList);
         }
         public List<Dishes> DishSortByOrder(List<Dishes> dishes)
         {
@@ -118,9 +123,12 @@ namespace examNew
         private void TypeDishSOrt_Click(object sender, RoutedEventArgs e)
         {
             DishesList = DishSortByOrder(DishesList);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(DishesListProperty.ToString()));
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(DishesListProperty.ToString()));
         }
 
-      
+        private void ButtonMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

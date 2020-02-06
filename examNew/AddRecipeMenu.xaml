@@ -25,24 +25,23 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Назва страви" Grid.Row="1" Margin="0,0,0,62" Grid.RowSpan="2" VerticalAlignment="Center"/>
-        <TextBox  Grid.Row="1" Grid.Column="1" Margin="21,17,20,18"/>
+        <TextBox  Grid.Row="1" Grid.Column="1" Margin="21,17,20,18" Name="TextBoxDishName"/>
 
-        <Label Content="Національність" Grid.Row="2" VerticalAlignment="Center"/>
-        <TextBox  Grid.Row="2" Grid.Column="1" Margin="21,17,20,17"/>
+        <Label Content="Вид кухні" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox  Grid.Row="2" Grid.Column="1" Margin="21,17,20,17"  Name="TextBoxKindOfDish"/>
 
-        <Label Content="Вид кухні" Grid.Row="2" Margin="0,62,0,0" Grid.RowSpan="2" VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="3" Grid.Column="1"   Margin="21,17,20,17">
-            <ComboBoxItem>
+        <Label Content="Тип страви" Grid.Row="2" Margin="0,62,0,0" Grid.RowSpan="2" VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="3" Grid.Column="1"   Margin="21,17,20,17" Name="ComboBoxTypeOfDish">
+            <ComboBoxItem Name="first">
                 <Button Content="Перша страва" Background="White" BorderThickness="0"/>
             </ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem Name="second">
                 <Button Content="Друга страва" Background="White" BorderThickness="0"/>
             </ComboBoxItem>
-            <ComboBoxItem>
+            <ComboBoxItem Name="salad">
                 <Button Content="Салат" Background="White" BorderThickness="0"/>
             </ComboBoxItem>
-
-            <ComboBoxItem>
+            <ComboBoxItem Name="dessert">
                 <Button Content="Десерт" Background="White" BorderThickness="0"/>
             </ComboBoxItem>
         </ComboBox>

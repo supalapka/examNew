@@ -19,6 +19,7 @@ namespace examNew
     /// </summary>
     public partial class AddRecipeMenu : Page
     {
+        Dishes dish = new Dishes();
         public AddRecipeMenu()
         {
             InitializeComponent();
@@ -33,11 +34,27 @@ namespace examNew
             BitmapImage bitmapImage = new BitmapImage(new Uri(imgFile.FileName, UriKind.RelativeOrAbsolute));
             imageContent.Source = bitmapImage;
             ButtonUploadImg.Content = "Змінити";
+
+            dish.Image = bitmapImage;
+
         }
 
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("HowToCookPage.xaml", UriKind.RelativeOrAbsolute));
+            dish.Name = TextBoxDishName.Text;
+            dish.KindOfDish = TextBoxKindOfDish.Text;
+
+            if (ComboBoxTypeOfDish.SelectedIndex == 0)
+            {
+                dish.TypeOfDish = "First course";
+            }
+            else if (ComboBoxTypeOfDish.SelectedIndex == 1) dish.TypeOfDish = "Second course";
+            else if (ComboBoxTypeOfDish.SelectedIndex == 2) dish.TypeOfDish = "Salad";
+            else if (ComboBoxTypeOfDish.SelectedIndex == 3) dish.TypeOfDish = "Dessert";
+
+            HowToCookPage howToCookPage = new HowToCookPage(dish);
+
+          this.NavigationService.Navigate(howToCookPage);
         }
     }
 }

@@ -9,7 +9,7 @@
       Title="AllRecipes">
 
     <Grid>
-        <ListView Name="dishList" Width="360" Background="#595959" SelectionChanged="dishList_SelectionChanged"
+        <ListView Name="dishList" Width="370" Background="#595959" SelectionChanged="dishList_SelectionChanged"
                   ItemsSource="{Binding DishesList}">
             <ListView.View >
                 <GridView>
@@ -20,8 +20,7 @@
                     <GridViewColumn   Width="120"
                                        DisplayMemberBinding="{Binding TypeOfDish}">
                         <GridViewColumn.Header>
-                            <Button Content="Type of dish" Background="White"  BorderThickness="0"
-                                   Name="TypeDishSOrt" Click="TypeDishSOrt_Click"/>
+                            Type of dish
                         </GridViewColumn.Header>
                     </GridViewColumn> 
                 </GridView>
@@ -29,5 +28,9 @@
             <ListView.Resources>
             </ListView.Resources>
         </ListView>
+
+        <Button Name="ButtonMainMenu" Click="ButtonMainMenu_Click"
+                Content="Menu" Height="25" Width="60" HorizontalAlignment="Right"
+                VerticalAlignment="Bottom" Margin="20"/>
     </Grid>
 </Page>

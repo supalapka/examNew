@@ -18,9 +18,33 @@ namespace examNew
     /// </summary>
     public partial class HowToCookPage : Page
     {
+        Dishes dish = null;
+        public string StepOne { get; set; }
+        public string StepTwo { get; set; }
+        public string StepThree { get; set; }
+        public string StepLast { get; set; }
+
         public HowToCookPage()
         {
             InitializeComponent();
+        }
+
+        public HowToCookPage(Dishes _dish)
+        {
+            InitializeComponent();
+            dish = _dish;
+        }
+
+        private void ButtonDone_Click(object sender, RoutedEventArgs e)
+        {
+            dish.StepOne = TextBoxFirstStep.Text;
+            dish.StepTwo = TextBoxSecondStep.Text;
+            dish.StepThree = TextBoxThirdStep.Text;
+            dish.StepLast = TextBoxLastStep.Text;
+            if (AllRecipes.DishesList == null)
+                AllRecipes.DishesList = new List<Dishes>();
+            AllRecipes.DishesList.Add(dish);
+            this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }
