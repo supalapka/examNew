@@ -21,10 +21,10 @@ namespace examNew
     /// </summary>
     public partial class AllRecipes : Page
     {
-         
+
         //public static readonly DependencyProperty DishesListProperty = DependencyProperty.Register("DishesList", typeof(List<Dishes>),
         //    typeof(AllRecipes), new PropertyMetadata()) ;
-       static public List<Dishes> DishesList { get; set; }
+        static public List<Dishes> DishesList { get; set; }
         //{
         //    get { return (List<Dishes>)this.GetValue(DishesListProperty); }
         //    set { this.SetValue(DishesListProperty, value); }
@@ -36,7 +36,7 @@ namespace examNew
             if (DishesList == null)
             {
                 DishesList = new List<Dishes>();
-                InitializeDishList();
+                    InitializeDishList();
             }
             DataContext = this;
 
@@ -102,12 +102,12 @@ namespace examNew
 
         private void dishList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          //  ContextMenu contextMenu = new ContextMenu();
-          //  Button buttonWatch = new Button();
-          ////  buttonWatch.BorderThickness = ;
-          //  buttonWatch.Content = "Watch this recipe";
-          //  contextMenu.Items.Add(buttonWatch);
-          //  contextMenu.IsOpen = true;
+            //  ContextMenu contextMenu = new ContextMenu();
+            //  Button buttonWatch = new Button();
+            ////  buttonWatch.BorderThickness = ;
+            //  buttonWatch.Content = "Watch this recipe";
+            //  contextMenu.Items.Add(buttonWatch);
+            //  contextMenu.IsOpen = true;
             //var timer = new System.Windows.Threading.DispatcherTimer();
             //timer.Tick += new EventHandler(timerTick);
             //timer.Interval = new TimeSpan(0, 0, 5);
@@ -130,5 +130,40 @@ namespace examNew
         {
             this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        //private void dishList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    ContextMenu contextMenu = new ContextMenu();
+        //    Button buttonWatch = new Button();
+        //    //  buttonWatch.BorderThickness = ;
+        //    buttonWatch.Content = "Watch this recipe";
+        //    contextMenu.Items.Add(buttonWatch);
+        //    contextMenu.IsOpen = true;
+
+
+        //    var timer = new System.Windows.Threading.DispatcherTimer();
+        //    timer.Tick += new EventHandler(timerTick);
+        //    timer.Interval = new TimeSpan(0, 0, 50);
+        //    timer.IsEnabled = true;
+        //    timer.Start();
+        //}
+
+        //private void timerTick(object sender, EventArgs e)
+        //{
+        //    System.Threading.Thread.Sleep(500);
+        //}
+
+        private void ButtonInfo_Click(object sender, RoutedEventArgs e)
+        {
+          
+
+        }
+
+        private void ButtonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DishesList.RemoveAt(dishList.SelectedIndex);
+            contextMenu1.IsOpen = false;
+        }
     }
 }
+
