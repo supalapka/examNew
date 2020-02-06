@@ -9,7 +9,7 @@
       Title="AllRecipes">
 
     <Grid>
-        <ListView Name="phonesList" Width="360" Background="#595959"  ItemsSource="{Binding DishesList}">
+        <ListView Name="dishList" Width="360" Background="#595959"  ItemsSource="{Binding DishesList}" SelectionChanged="dishList_SelectionChanged">
             <ListView.View >
                 <GridView>
                     <GridViewColumn Header="Dish" Width="120" 
