@@ -17,19 +17,24 @@
 
         <Grid >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="646*"/>
+                <ColumnDefinition Width="36"/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <Image Stretch="Fill" >
-                <Image.Source>
-                    <BitmapImage UriSource="Resources/AppLogo.png"/>
-                </Image.Source>
-            </Image>
 
+            <Button Style="{StaticResource buttonMain}" Name="ButtonMainMenu" Click="ButtonMainMenu_Click"
+                    Width="Auto" Grid.ColumnSpan="2" Margin="0,0,640,0">
+                <Image Stretch="Uniform" >
+                    <Image.Source>
+                        <BitmapImage UriSource="Resources/AppLogo.png"/>
+
+                    </Image.Source>
+                </Image>
+
+            </Button>
             <Button Content="___" Grid.Column="2"  Style="{StaticResource buttonMain}"
                   Name="ButtonHide" Click="ButtonHide_Click"/>
             <Button  Grid.Column="3"  Style="{StaticResource buttonMain}"
@@ -40,7 +45,8 @@
             <Button Content="X" Grid.Column="4" 
                       Name="ButtonClose" Click="ButtonClose_Click" 
                     Style="{StaticResource buttonMain}"/>
-        </Grid> <!-- top of window-->
+        </Grid>
+        <!-- top of window-->
 
 
         <Frame Grid.Row="1" Source="StartPage.xaml" NavigationUIVisibility="Hidden"/>

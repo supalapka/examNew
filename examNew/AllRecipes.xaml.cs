@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Timers;
 using System.Windows;
@@ -12,15 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace examNew
 {
     /// <summary>
     /// Interaction logic for AllRecipes.xaml
     /// </summary>
-    public partial class AllRecipes : Page
+    public partial class AllRecipes : Page, INotifyPropertyChanged
     {
-
-        public List<Dishes> DishesList { get;set; }
+         
+        public static readonly DependencyProperty DishesListProperty = DependencyProperty.Register("DishesList", typeof(List<Dishes>),
+            typeof(AllRecipes), new PropertyMetadata()) ;
+        public List<Dishes> DishesList
+        {
+            get { return (List<Dishes>)this.GetValue(DishesListProperty); }
+            set { this.SetValue(DishesListProperty, value); }
+        }    
 
         public AllRecipes()
         {
@@ -28,6 +36,8 @@ namespace examNew
             DishesList = new List<Dishes>();
             InitializeDishList();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         void InitializeDishList()
         {
@@ -62,11 +72,10 @@ namespace examNew
             dish5.OrderOfDish = DishOrder.salad;
 
             DishesList.Add(dish1);
-            DishesList.Add(dish2);
-            DishesList.Add(dish3);
-            DishesList.Add(dish4);
             DishesList.Add(dish5);
-           DishesList = DishSortByOrder(DishesList);
+            DishesList.Add(dish3);
+            DishesList.Add(dish2);
+            DishesList.Add(dish4);
             DataContext = this;
         }
         public List<Dishes> DishSortByOrder(List<Dishes> dishes)
@@ -88,13 +97,30 @@ namespace examNew
 
         private void dishList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ContextMenu contextMenu = new ContextMenu();
-            Button buttonWatch = new Button();
-          //  buttonWatch.BorderThickness = ;
-            buttonWatch.Content = "Watch this recipe";
-            contextMenu.Items.Add(buttonWatch);
-            contextMenu.IsOpen = true;
-            //Timer timer = new Timer();
+          //  ContextMenu contextMenu = new ContextMenu();
+          //  Button buttonWatch = new Button();
+          ////  buttonWatch.BorderThickness = ;
+          //  buttonWatch.Content = "Watch this recipe";
+          //  contextMenu.Items.Add(buttonWatch);
+          //  contextMenu.IsOpen = true;
+            //var timer = new System.Windows.Threading.DispatcherTimer();
+            //timer.Tick += new EventHandler(timerTick);
+            //timer.Interval = new TimeSpan(0, 0, 5);
+            //timer.Start();
         }
+
+        //private void timerTick(object sender, EventArgs e)
+        //{
+        //    System.Threading.Thread.Sleep(5000);
+        //}
+
+
+        private void TypeDishSOrt_Click(object sender, RoutedEventArgs e)
+        {
+            DishesList = DishSortByOrder(DishesList);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(DishesListProperty.ToString()));
+        }
+
+      
     }
 }

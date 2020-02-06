@@ -27,5 +27,10 @@ namespace examNew
         {
             this.NavigationService.Navigate(new Uri("AllRecipes.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void ButtonAddRecipe_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("AddRecipeMenu.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

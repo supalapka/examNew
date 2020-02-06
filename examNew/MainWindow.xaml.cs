@@ -10,9 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Windows.Navigation;
+    
 namespace examNew
 {
   
@@ -40,5 +40,12 @@ namespace examNew
         {
 
         }
+
+        private void ButtonMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+        //  this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+       
     }
 }

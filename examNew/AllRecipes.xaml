@@ -5,19 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:examNew"
       mc:Ignorable="d" Background="#7a7a7a"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" Name="DishesMenu"
       Title="AllRecipes">
 
     <Grid>
-        <ListView Name="dishList" Width="360" Background="#595959"  ItemsSource="{Binding DishesList}" SelectionChanged="dishList_SelectionChanged">
+        <ListView Name="dishList" Width="360" Background="#595959" SelectionChanged="dishList_SelectionChanged"
+                  ItemsSource="{Binding DishesList}">
             <ListView.View >
                 <GridView>
                     <GridViewColumn Header="Dish" Width="120" 
                         DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Kind of dish" Width="120"
                             DisplayMemberBinding="{Binding KindOfDish}"/>
-                    <GridViewColumn Header="Type of dish"  Width="120"
-                                       DisplayMemberBinding="{Binding TypeOfDish}"/>
+                    <GridViewColumn   Width="120"
+                                       DisplayMemberBinding="{Binding TypeOfDish}">
+                        <GridViewColumn.Header>
+                            <Button Content="Type of dish" Background="White"  BorderThickness="0"
+                                   Name="TypeDishSOrt" Click="TypeDishSOrt_Click"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn> 
                 </GridView>
             </ListView.View>
             <ListView.Resources>
