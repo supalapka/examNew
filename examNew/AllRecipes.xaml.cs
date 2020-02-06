@@ -100,25 +100,6 @@ namespace examNew
             return dishes;
         }
 
-        private void dishList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  ContextMenu contextMenu = new ContextMenu();
-            //  Button buttonWatch = new Button();
-            ////  buttonWatch.BorderThickness = ;
-            //  buttonWatch.Content = "Watch this recipe";
-            //  contextMenu.Items.Add(buttonWatch);
-            //  contextMenu.IsOpen = true;
-            //var timer = new System.Windows.Threading.DispatcherTimer();
-            //timer.Tick += new EventHandler(timerTick);
-            //timer.Interval = new TimeSpan(0, 0, 5);
-            //timer.Start();
-        }
-
-        //private void timerTick(object sender, EventArgs e)
-        //{
-        //    System.Threading.Thread.Sleep(5000);
-        //}
-
 
         private void TypeDishSOrt_Click(object sender, RoutedEventArgs e)
         {
@@ -131,32 +112,12 @@ namespace examNew
             this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        //private void dishList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        //{
-        //    ContextMenu contextMenu = new ContextMenu();
-        //    Button buttonWatch = new Button();
-        //    //  buttonWatch.BorderThickness = ;
-        //    buttonWatch.Content = "Watch this recipe";
-        //    contextMenu.Items.Add(buttonWatch);
-        //    contextMenu.IsOpen = true;
-
-
-        //    var timer = new System.Windows.Threading.DispatcherTimer();
-        //    timer.Tick += new EventHandler(timerTick);
-        //    timer.Interval = new TimeSpan(0, 0, 50);
-        //    timer.IsEnabled = true;
-        //    timer.Start();
-        //}
-
-        //private void timerTick(object sender, EventArgs e)
-        //{
-        //    System.Threading.Thread.Sleep(500);
-        //}
 
         private void ButtonInfo_Click(object sender, RoutedEventArgs e)
         {
-          
+            RecipeInfo recipeInfo = new RecipeInfo(dishList.SelectedIndex);
 
+            this.NavigationService.Navigate(recipeInfo);
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
