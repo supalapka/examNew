@@ -18,12 +18,10 @@ namespace examNew
   
     public partial class MainWindow : Window
     {
-        public string ImageLogoPath = $"{Environment.CurrentDirectory}\\resources\\AppLogo.png";
 
         public MainWindow()
         {
             InitializeComponent();
-            ImageLogoPath += "1";
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)

@@ -14,18 +14,18 @@ using System.Windows.Shapes;
 namespace examNew
 {
     /// <summary>
-    /// Interaction logic for StartPage.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class StartPage : Page
+    public partial class MainMenu : Page
     {
-        public StartPage()
+        public MainMenu()
         {
             InitializeComponent();
         }
 
-        private void ButtonNext_Click(object sender, RoutedEventArgs e)
+        private void ButtonWatchAll_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
+            this.NavigationService.Navigate(new Uri("AllRecipes.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

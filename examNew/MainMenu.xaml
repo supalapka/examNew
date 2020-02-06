@@ -1,0 +1,47 @@
+﻿<Page x:Class="examNew.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:examNew"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainMenu">
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#616161"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="39*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#8a8a8a" Grid.ColumnSpan="2"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="148*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Border Background="#787878" Grid.RowSpan="8" />
+            
+            <Button Grid.Row="1" Content="Watch all recipes" 
+                    Name="ButtonWatchAll" Click="ButtonWatchAll_Click"/>
+            <Button Grid.Row="2" Content="Add the recipe" />
+            <Button Grid.Row="3" Content="Wath recipes" />
+            <Button Grid.Row="4" Content="Wath recipes" />
+        </Grid>
+    </Grid>
+</Page>

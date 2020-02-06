@@ -9,7 +9,11 @@
       Title="StartPage">
 
     <Grid>
-        <Grid Grid.Row="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="391*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="2">
             <!-- CONTENT-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="44*"/>
@@ -51,5 +55,17 @@
 
         </Grid>
         <!-- CONTENT END-->
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="141*"/>
+                <ColumnDefinition Width="19*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Next" Height="25" Width="65" 
+                    Grid.Column="1" Style="{StaticResource buttonMain}" 
+                    Name="ButtonNext" Click="ButtonNext_Click"/>
+        </Grid>
+
     </Grid>
 </Page>

@@ -24,8 +24,11 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding ElementName=CookingApplication, Path=ImageLogoPath}"
-                  Stretch="Fill" />
+            <Image Stretch="Fill" >
+                <Image.Source>
+                    <BitmapImage UriSource="Resources/AppLogo.png"/>
+                </Image.Source>
+            </Image>
 
             <Button Content="___" Grid.Column="2"  Style="{StaticResource buttonMain}"
                   Name="ButtonHide" Click="ButtonHide_Click"/>
@@ -40,7 +43,8 @@
         </Grid> <!-- top of window-->
 
 
-        <Frame Grid.Row="1" Source="StartPage.xaml"/>
+        <Frame Grid.Row="1" Source="StartPage.xaml" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>
+ 

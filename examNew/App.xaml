@@ -9,7 +9,22 @@
                 <Setter Property="Background" Value="#adadad"/>
                 <Setter Property="Width" Value="40"/>
                 <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Background" Value="#636363"/>
+                    </Trigger>
+                </Style.Triggers>
             </Style>
         </ResourceDictionary>
+
     </Application.Resources>
 </Application>
