@@ -1,0 +1,34 @@
+﻿<Page x:Class="examNew.SearchByIngredients"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:examNew"
+      mc:Ignorable="d" Background="Gray"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SearchByIngredients">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="367*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Інградієнти" Margin="20,0,0,0" Grid.Row="2"  />
+        <Label Content="по одному" Margin="20,1,1,-4" Grid.Row="2" VerticalAlignment="Bottom"
+               FontSize="10"/>
+
+        <TextBox  Height="25" Width="180"  Grid.Row="2" Margin="-70,0,310,0" Name="textBox"/>
+        <Button Content="Search"   Height="25" Width="80"  Grid.Row="2" Margin="0,0,100,0"
+                Name="ButtonSearch" Click="ButtonSearch_Click"/>
+        <TextBlock TextWrapping="Wrap" Grid.Row="3" Margin="130,0,0,0"
+                   Name="textBlock"/>
+
+        <Button Content="Menu" Height="25" Width="60" HorizontalAlignment="Right"
+                VerticalAlignment="Bottom" Margin="20" Grid.Row="3" 
+                Style="{StaticResource buttonMain}" Name="buttonMenu"
+                Click="buttonMenu_Click"/>
+    </Grid>
+</Page>

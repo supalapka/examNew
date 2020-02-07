@@ -32,5 +32,15 @@ namespace examNew
         {
             this.NavigationService.Navigate(new Uri("AddRecipeMenu.xaml", UriKind.RelativeOrAbsolute));
         }
+
+
+        private void ButtonSearchByIngredients_Click(object sender, RoutedEventArgs e)
+        {
+            //for(int i = 0; i < AllRecipes.DishesList.Count;i++)
+            //{
+
+            //}
+            this.NavigationService.Navigate(new Uri("SearchByIngredients.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

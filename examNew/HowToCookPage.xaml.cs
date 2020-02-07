@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,6 +47,11 @@ namespace examNew
                 AllRecipes.DishesList = new List<Dishes>();
             AllRecipes.DishesList.Add(dish);
             this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
+
+            var path = $"{Environment.CurrentDirectory}\\SomeRecipes.json";
+            var serialize = JsonConvert.SerializeObject(AllRecipes.DishesList);
+            File.AppendAllText(path, serialize);
+
         }
     }
 }

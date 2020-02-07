@@ -39,6 +39,10 @@
             </ListView.Resources>
         </ListView>
 
+        <Button Name="ButtonUploadSomePecipes" Content="Uplaod recipes for test"
+               Height="25" Width="140" HorizontalAlignment="Right"  Margin="20"
+                Click="ButtonUploadSomePecipes_Click"/>
+
         <Button Name="ButtonMainMenu" Click="ButtonMainMenu_Click"
                 Content="Menu" Height="25" Width="60" HorizontalAlignment="Right"
                 VerticalAlignment="Bottom" Margin="20"/>

@@ -41,8 +41,9 @@
                     Name="ButtonWatchAll" Click="ButtonWatchAll_Click"/>
             <Button Grid.Row="2" Content="Add the recipe" 
                     Name="ButtonAddRecipe" Click="ButtonAddRecipe_Click"/>
-            <Button Grid.Row="3" Content="Wath recipes" />
-            <Button Grid.Row="4" Content="Wath recipes" />
+            <Button Grid.Row="3" Content="Search by ingredients"
+                    Name="ButtonSearchByIngredients" Click="ButtonSearchByIngredients_Click"/>
+            <Button Grid.Row="4" Content="nothing yet" />
         </Grid>
     </Grid>
 </Page>
