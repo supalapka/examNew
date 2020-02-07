@@ -23,7 +23,8 @@ namespace examNew
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
-            for(int i = 0; i < AllRecipes.DishesList.Count;i++)
+            textBlock.Text = "";
+            for (int i = 0; i < AllRecipes.DishesList.Count;i++)
             {
                 for (int ing = 0; ing < AllRecipes.DishesList[i].Ingredients.Count; ing++)
                 if(textBox.Text == AllRecipes.DishesList[i].Ingredients[ing])
@@ -32,6 +33,8 @@ namespace examNew
                         textBlock.Text += "\n";
                     }
             }
+            textBox.Clear();
+
         }
 
         private void buttonMenu_Click(object sender, RoutedEventArgs e)

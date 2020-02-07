@@ -48,9 +48,9 @@ namespace examNew
             AllRecipes.DishesList.Add(dish);
             this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
 
-            var path = $"{Environment.CurrentDirectory}\\SomeRecipes.json";
-            var serialize = JsonConvert.SerializeObject(AllRecipes.DishesList);
-            File.AppendAllText(path, serialize);
+            //var path = $"{Environment.CurrentDirectory}\\SomeRecipes.json";
+            //var serialize = JsonConvert.SerializeObject(AllRecipes.DishesList);
+            //File.WriteAllText(path, serialize);
 
         }
     }
