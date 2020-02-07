@@ -26,6 +26,8 @@ namespace examNew
         public string StepThree { get; set; }
         public string StepLast { get; set; }
         public BitmapImage Image { get; set; }
+        public List<string> Ingredients { get; set; } = new List<string>();
+        public string IngredientsString { get; set; }
 
         public RecipeInfo()
         {
@@ -33,6 +35,12 @@ namespace examNew
         }
 
           public RecipeInfo(int index)
+        {
+            InitializeDish(index);
+            InitializeComponent();
+        }
+
+        public void InitializeDish(int index)
         {
             Name1 = AllRecipes.DishesList[index].Name;
             KindOfDish = AllRecipes.DishesList[index].KindOfDish;
@@ -42,7 +50,15 @@ namespace examNew
             StepThree = AllRecipes.DishesList[index].StepThree;
             StepLast = AllRecipes.DishesList[index].StepLast;
             Image = AllRecipes.DishesList[index].Image;
-            InitializeComponent();
+            Ingredients = AllRecipes.DishesList[index].Ingredients;
+
+            for(int i = 0; i < Ingredients.Count;i++)
+            {
+                IngredientsString += Ingredients[i];
+                if (i + 1 != Ingredients.Count)
+                    IngredientsString += ", ";
+                else IngredientsString += ".";
+            }
         }
 
         private void buttonMainMenu_Click(object sender, RoutedEventArgs e)

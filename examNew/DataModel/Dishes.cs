@@ -1,4 +1,5 @@
-﻿using System.Windows.Media.Imaging;
+﻿using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace examNew
 {
@@ -13,5 +14,6 @@ namespace examNew
         public string StepThree { get; set; }
         public string StepLast { get; set; }
         public BitmapImage Image { get; set; }
+        public List<string> Ingredients { get; set; } = new List<string>();
     }
 }

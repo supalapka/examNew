@@ -1,16 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace examNew
 {
@@ -20,6 +12,16 @@ namespace examNew
     public partial class AddRecipeMenu : Page
     {
         Dishes dish = new Dishes();
+
+        public string Ingredients
+        {
+            get { return (string)this.GetValue(IngredientsProperty); }
+            set { this.SetValue(IngredientsProperty, value); }
+        }
+
+        public static readonly DependencyProperty IngredientsProperty =
+       DependencyProperty.Register("Ingredients", typeof(string), typeof(AddRecipeMenu));
+
         public AddRecipeMenu()
         {
             InitializeComponent();
@@ -54,7 +56,16 @@ namespace examNew
 
             HowToCookPage howToCookPage = new HowToCookPage(dish);
 
-          this.NavigationService.Navigate(howToCookPage);
+            this.NavigationService.Navigate(howToCookPage);
+        }
+
+        private void buttonAddIngrediente_Click(object sender, RoutedEventArgs e)
+        {
+            dish.Ingredients.Add(TextBoxIngredient.Text);
+            Ingredients += TextBoxIngredient.Text;
+            Ingredients += "\n";
+            TextBoxIngredient.Clear();
+            this.DataContext = this;
         }
     }
 }

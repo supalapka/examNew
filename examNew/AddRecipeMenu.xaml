@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:examNew"
-      mc:Ignorable="d" Background="#8a8a8a"
+      mc:Ignorable="d" Background="#8a8a8a" Name="AddRecipe"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddRecipeMenu">
 
@@ -46,15 +46,29 @@
             </ComboBoxItem>
         </ComboBox>
 
-
         <Image Name="imageContent" Width="350" Height="250" Grid.Column="2" Margin="25,45,24,16" 
                Grid.RowSpan="5"/>
 
         <Button Content="Image" Grid.Column="2" Grid.Row="0" Margin="90,10,90,10"
             Name="ButtonUploadImg" Click="ButtonUploadImg_Click" />
 
+        <Label Content="Інгрeдієнти"  Grid.Row="5" FontSize="14"/>
+        <Label Content="по одному " Grid.Row="5" Margin="12,14,0,0"  FontSize="11"  />
+        <TextBox Grid.Row="5" Grid.Column="1"  Margin="21,17,75,17" 
+             Name="TextBoxIngredient"    />
+
+        <Button Content="Add" Grid.Column="1" Grid.Row="5" Click="buttonAddIngrediente_Click"
+                Name="buttonAddIngrediente" Height="25" Width="50" HorizontalAlignment="Left"
+                Margin="230,20,0,20"/>
+        
+        <TextBlock  Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Width="120"
+                   HorizontalAlignment="Left" Margin="10" Grid.RowSpan="3" Name="TextBlockIngredients" 
+                  Text="{Binding Ingredients}" />
+
+
         <Button Name="ButtonNext" Content="Далі" Grid.Column="2" Grid.Row="6"
                 Height="25" Width="60" HorizontalAlignment="Right" Margin="15"
                 VerticalAlignment="Bottom" Click="ButtonNext_Click"/>
+
     </Grid>
 </Page>
