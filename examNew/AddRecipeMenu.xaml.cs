@@ -67,5 +67,7 @@ namespace examNew
             TextBoxIngredient.Clear();
             this.DataContext = this;
         }
+
+       
     }
 }

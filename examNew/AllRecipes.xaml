@@ -9,18 +9,18 @@
       Title="AllRecipes">
 
     <Grid>
-        <ListView Name="dishList" Width="370" Background="#595959"
+        <ListView Name="dishList" Width="370" Background="#1F2936"
                   ItemsSource="{Binding DishesList}">
-            <ListView.ContextMenu>
-                <ContextMenu Name="contextMenu1">
-                    <MenuItem>
+            <ListView.ContextMenu >
+                <ContextMenu Name="contextMenu1" Background="#1F2936">
+                    <MenuItem Background="#1F2936">
                         <Button Content="Info" Name="ButtonInfo" Click="ButtonInfo_Click"/>
                         <Button Content="Delete" Name="ButtonDelete" Click="ButtonDelete_Click"/>
                     </MenuItem>
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.View >
-                <GridView>
+                <GridView >
                     <GridViewColumn Header="Dish" Width="120" 
                         DisplayMemberBinding="{Binding Name}">
                         

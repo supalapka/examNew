@@ -37,13 +37,9 @@ namespace examNew
 
         private void ButtonHide_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.MainWindow.WindowState = System.Windows.WindowState.Minimized;
         }
 
-        private void ButtonMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-        //  this.NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
-        }
 
        
     }

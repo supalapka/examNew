@@ -25,7 +25,6 @@
                 </Style.Triggers>
             </Style>
             
-            
             <Style TargetType="Page" >
                 <Setter Property="Background" Value="#17212B"/>
             </Style>
@@ -37,6 +36,15 @@
 
             <Style TargetType="TextBlock">
                 <Setter Property="Foreground" Value="#91A3B5"/>
+            </Style>
+
+            <Style TargetType="TextBox">
+                <Setter Property="Background" Value="#1F2936"/>
+                <Setter Property="Foreground" Value="#91A3B5"/>
+            </Style>
+
+            <Style TargetType="ComboBox" x:Key="comboboxStyle">
+                <Setter Property="Background" Value="#1F2936"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -19,9 +19,9 @@
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="100*"/>
             <ColumnDefinition Width="300*"/>
-            <ColumnDefinition Width="399*"/>
+            <ColumnDefinition Width="400*"/>
         </Grid.ColumnDefinitions>
 
         <Label Content="Назва страви" Grid.Row="1" Margin="0,0,0,62" Grid.RowSpan="2" VerticalAlignment="Center"/>
@@ -31,19 +31,18 @@
         <TextBox  Grid.Row="2" Grid.Column="1" Margin="21,17,20,17"  Name="TextBoxKindOfDish"/>
 
         <Label Content="Тип страви" Grid.Row="2" Margin="0,62,0,0" Grid.RowSpan="2" VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="3" Grid.Column="1"   Margin="21,17,20,17" Name="ComboBoxTypeOfDish">
-            <ComboBoxItem Name="first">
-                <Button Content="Перша страва" Background="White" BorderThickness="0"/>
-            </ComboBoxItem>
-            <ComboBoxItem Name="second">
-                <Button Content="Друга страва" Background="White" BorderThickness="0"/>
-            </ComboBoxItem>
-            <ComboBoxItem Name="salad">
-                <Button Content="Салат" Background="White" BorderThickness="0"/>
-            </ComboBoxItem>
-            <ComboBoxItem Name="dessert">
-                <Button Content="Десерт" Background="White" BorderThickness="0"/>
-            </ComboBoxItem>
+        <ComboBox Grid.Row="3" Grid.Column="1" Margin="21,17,20,17" Name="ComboBoxTypeOfDish"
+                   >
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Background" Value="#1F2936"/>
+                    <Setter Property="BorderBrush" Value="#1F2936"/>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+            <ComboBoxItem Name="first" Content="Перша страва" />
+            <ComboBoxItem Name="second" Content="Друга страва"/>
+            <ComboBoxItem Name="salad" Content="Салат"/>
+            <ComboBoxItem Name="dessert" Content="Десерт" />
         </ComboBox>
 
         <Image Name="imageContent" Width="350" Height="250" Grid.Column="2" Margin="25,45,24,16" 
