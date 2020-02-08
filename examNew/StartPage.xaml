@@ -20,7 +20,7 @@
                 <RowDefinition Height="297*"/>
                 <RowDefinition Height="63*"/>
             </Grid.RowDefinitions>
-            <Border Background="#999999" Grid.RowSpan="3"/>
+           
 
             <TextBlock Text="Cooking" HorizontalAlignment="Center"
                        FontSize="18" Margin="0,10,0,10" Width="66" />
@@ -63,7 +63,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Next" Height="25" Width="65" 
-                    Grid.Column="1" Style="{StaticResource buttonMain}" 
+                    Grid.Column="1" 
                     Name="ButtonNext" Click="ButtonNext_Click"/>
         </Grid>
 

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:examNew"
-        mc:Ignorable="d" Background="#adadad" WindowStyle="None"
+        mc:Ignorable="d" Background="#17212B" WindowStyle="None"
         Name="CookingApplication"
         Title="MainWindow" Height="450" Width="800">
 
@@ -17,7 +17,7 @@
 
         <Grid >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="36"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
@@ -25,26 +25,22 @@
             </Grid.ColumnDefinitions>
 
 
-            <Button Style="{StaticResource buttonMain}" Name="ButtonMainMenu" Click="ButtonMainMenu_Click"
-                    Width="Auto" Grid.ColumnSpan="2" Margin="0,0,640,0">
-                <Image Stretch="Uniform" >
-                    <Image.Source>
-                        <BitmapImage UriSource="Resources/AppLogo.png"/>
+            <Image Stretch="Uniform" Grid.Column="0" >
+                <Image.Source>
+                    <BitmapImage UriSource="Resources/Logo.png"/>
+                </Image.Source>
+            </Image>
 
-                    </Image.Source>
-                </Image>
-
-            </Button>
-            <Button Content="___" Grid.Column="2"  Style="{StaticResource buttonMain}"
+            <Button Content="___" Grid.Column="2"
                   Name="ButtonHide" Click="ButtonHide_Click"/>
-            <Button  Grid.Column="3"  Style="{StaticResource buttonMain}"
+            <Button  Grid.Column="3" 
                      Name="ButtonFullScreen" Click="ButtonFullScreen_Click">
-                <Rectangle Width="10" Height="10"
-                           Stroke="Black" StrokeThickness="1" />
+                <Rectangle Width="10" Height="10" Stroke="#91A3B5"
+                            StrokeThickness="1" />
             </Button>
             <Button Content="X" Grid.Column="4" 
                       Name="ButtonClose" Click="ButtonClose_Click" 
-                    Style="{StaticResource buttonMain}"/>
+                    />
         </Grid>
         <!-- top of window-->
 

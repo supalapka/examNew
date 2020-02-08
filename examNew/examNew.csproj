@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Resources\AppLogo.png" />
+    <None Remove="resources\Logo.png" />
     <None Remove="resources\NoImage.png" />
   </ItemGroup>
 
@@ -16,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="resources\Logo.png" />
     <Resource Include="resources\NoImage.png" />
     <Resource Include="Resources\AppLogo.png" />
   </ItemGroup>

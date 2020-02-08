@@ -5,8 +5,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <Style x:Key="buttonMain" TargetType="Button">
-                <Setter Property="Background" Value="#adadad"/>
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="#17212B"/>
                 <Setter Property="Width" Value="40"/>
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="Template">
@@ -20,11 +20,24 @@
                 </Setter>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="true">
-                        <Setter Property="Background" Value="#636363"/>
+                        <Setter Property="Background" Value="#232E3C"/>
                     </Trigger>
                 </Style.Triggers>
             </Style>
-        </ResourceDictionary>
+            
+            
+            <Style TargetType="Page" >
+                <Setter Property="Background" Value="#17212B"/>
+            </Style>
 
+
+            <Style TargetType="Label">
+                <Setter Property="Foreground" Value="#91A3B5"/>
+            </Style>
+
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#91A3B5"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -8,12 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HowToCookPage">
 
+
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="43*"/>
             <RowDefinition Height="199*"/>
         </Grid.RowDefinitions>
-        <Border Background="#8a8a8a" Grid.RowSpan="3"/>
 
         <Grid>
             <Grid.ColumnDefinitions>
